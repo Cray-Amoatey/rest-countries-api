@@ -15,6 +15,4 @@ box-shadow:2px 2px 1em rgba(0,0,0)
         cursor: pointer
     }
 }
-
-
  `
