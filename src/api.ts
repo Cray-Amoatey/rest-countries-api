@@ -6,15 +6,15 @@ const http = axios.create({
 
 export const api =  {
     getCountries: async () => {
-        let response = await http.get('/all')
+        const response = await http.get('/all')
         return response.data
     },
     getCountry: async (name: string) => {
-        let response = await http.get(`/name${name}?fullText-true`)
+        const response = await http.get(`/name${name}?fullText-true`)
         return response.data
     },
     getCountryByCode: async (code: string) => {
-        let response = await http.get( `/alpha?codes-${code}`)
+        const response = await http.get( `/alpha?codes-${code}`)
         return response.data
     }
 }
