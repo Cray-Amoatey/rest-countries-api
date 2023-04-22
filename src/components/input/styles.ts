@@ -17,5 +17,14 @@ input{
     outline:0;
     font-size:14px;
 }
+
+select {
+    border-radio: 2px;
+    padding: 0px 20px;
+    border: none;
+    box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
+    outline: 0;
+    font-size: 14px
+}
 `
 
