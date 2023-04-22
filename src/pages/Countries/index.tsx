@@ -1,10 +1,11 @@
 import * as C from "./styles";
-import { Input } from "../../components/input";
-import { api } from "../../api";
 import { useEffect, useState } from "react";
+import { Input } from "../../components/input";
+import { CountriesTs } from "../../types/Countries";
+import { api } from "../../api";
 
 export const Countries = () => {
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState<CountriesTs[]>([]);
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
@@ -23,8 +24,16 @@ export const Countries = () => {
     <C.CountriesArea>
       <Input />
       <div className="countries">
-        {loading && <div className=""> Loading...</div>}
-        {!loading && countries.map((item, index) => <div>{item.name}</div>)}
+        {loading && 
+          <div className=""> Loading...</div>
+        }
+        {!loading &&
+         countries.map((item) => (
+          <></>
+
+         ))
+         
+        }
       </div>
     </C.CountriesArea>
   );
