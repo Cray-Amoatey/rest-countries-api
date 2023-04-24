@@ -2,6 +2,7 @@ import * as C from "./styles";
 import { useEffect, useState } from "react";
 import { Input } from "../../components/input";
 import { CountriesTs } from "../../types/Countries";
+import {CountryItem} from '../../components/Countryitem'
 import { api } from "../../api";
 
 export const Countries = () => {
@@ -13,11 +14,11 @@ export const Countries = () => {
   }, []);
 
   const getAllCountries = async () => {
-    setloading(false);
-    let countries = await api.getCountries();
+    setloading(true);
+    let countries = await api.getCountries()
     setCountries(countries);
     console.log(countries);
-    setloading(true);
+    setloading(false);
   };
 
   return (
@@ -29,7 +30,13 @@ export const Countries = () => {
         }
         {!loading &&
          countries.map((item) => (
-          <></>
+          <CountryItem
+          name= {item.name}
+          population ={item.population}
+          region={item.region}
+          capital={item.capital}
+          flag ={item.flags.png}
+          />
 
          ))
          

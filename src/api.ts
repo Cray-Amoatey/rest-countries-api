@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const http = axios.create({
-    baseURL: 'https://restcountries.com/v3.1/all'
+    baseURL: 'https://restcountries.com/v2'
 })
 
 export const api =  {
@@ -18,3 +18,13 @@ export const api =  {
         return response.data
     }
 }
+
+// export let api;
+// async function getCountries (){
+// api = await axios.get("https://restcountries.com/v3.1/all");
+// const data = await api.data
+// console.log(data)
+
+// }
+// getCountries();
+
