@@ -12,4 +12,4 @@ export const CountryPage = styled.main`
   .loading {
     min-height: 100vh;
   }
-`
+`;
