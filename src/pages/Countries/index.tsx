@@ -7,6 +7,7 @@ import { api } from "../../api";
 
 export const Countries = () => {
   const [countries, setCountries] = useState<CountriesTs[]>([]);
+  const [search, setSearch] = useState('')
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
@@ -21,9 +22,21 @@ export const Countries = () => {
     setloading(false);
   };
 
+  
+const lowerSearch = search.toLowerCase()
+  
+  const filteredCountries = countries.filter(country => country
+    .name.toLowerCase().includes(lowerSearch) || country
+    .region.toLowerCase().includes(lowerSearch)
+  )
+
+  console.log(search)
   return (
     <C.CountriesArea>
-      <Input />
+      <Input
+      value={search}
+      setSearch={setSearch}
+       />
       <div className="countries">
         {loading && 
           <div className=""> Loading...</div>

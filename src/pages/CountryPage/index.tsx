@@ -5,8 +5,9 @@ import {CountryTS} from '../../types/Country'
 import { SingleCountry } from '../../components/SingleCountry'
 import {api} from '../../api'
 
+
 export const CountryPage = () => {
-    const {name} = useParams()
+    const {name, code} = useParams()
 
     const [loading, setloading]= useState(false)
     const [country, setCountry] = useState<CountryTs[]>([])
@@ -14,12 +15,14 @@ export const CountryPage = () => {
     useEffect(()=> {
         if(name) {
             getCountry(name)
+        } else if (code) {
+            getCountry(code)
         }
-    },[name])
+    },[name, code])
 
     const getCountry = async (param: string) => {
         setloading(true)
-        let country = await api.getCountry(param)
+        let country = name ? await api.getCountry(param) : await api.getCountyByCode(param)
         setCountry(country)
         console.log(country)
         setloading(false)

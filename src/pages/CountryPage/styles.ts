@@ -12,4 +12,16 @@ export const CountryPage = styled.main`
   .loading {
     min-height: 100vh;
   }
+
+  .back--button {
+    text-decoration:none;
+    color:#000;
+    margin-botton: 30px;
+    display:flex;
+    justify-content: center
+    align-items: center
+    width: 120px;
+    height: 40px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.2)
+  }
 `;
