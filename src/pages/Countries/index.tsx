@@ -30,7 +30,6 @@ const lowerSearch = search.toLowerCase()
     .region.toLowerCase().includes(lowerSearch)
   )
 
-  console.log(search)
   return (
     <C.CountriesArea>
       <Input
