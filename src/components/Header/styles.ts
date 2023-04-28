@@ -27,7 +27,7 @@ box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
 }
 @media(max-width: 767px){
     .container{
-        height: 100%
+        height: 100%;
         h1 {
             font-size: 17px
         }

@@ -23,4 +23,10 @@ export const CountriesArea = styled.main`
         grid-template-columns: repeat(2, 1fr);
     }
   }
-`;
+
+  @media(max-width: 540px){
+    .countries{
+        grid-template-columns: 1fr
+    }
+  }
+`
