@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const CountriesArea = styled.main`
-  min-height: calc(100vh) - 90px;
-
   .countries {
     display: grid;
-    width: 1024px;
-    margin: auto;
-    gird-template-columns: repear(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Set 4 columns with equal width */
     grid-gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width to limit the container size */
+    margin: auto;
   }
 
   @media (max-width: 1024px) {
@@ -18,15 +17,15 @@ export const CountriesArea = styled.main`
     }
   }
 
-  @media(max-width: 768px){
+  @media (max-width: 768px) {
     .countries {
-        grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media(max-width: 540px){
-    .countries{
-        grid-template-columns: 1fr
+  @media (max-width: 540px) {
+    .countries {
+      grid-template-columns: 1fr;
     }
   }
-`
+`;
