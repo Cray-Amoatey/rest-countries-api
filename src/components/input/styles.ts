@@ -26,5 +26,27 @@ select {
     outline: 0;
     font-size: 14px
 }
+
+@media(max-width:1024px){
+    & {
+        width:auto;
+        padding:20px
+    }
+}
+
+@media(max-width: 768px){
+    &{
+        flex-direction: column;
+        select{
+            margin-top: 10px; 
+            height: 50px;
+            width: max-content
+        }
+
+        input{
+            width: 97%
+        }
+    }
+}
 `
 

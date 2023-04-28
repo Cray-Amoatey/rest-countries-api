@@ -14,7 +14,7 @@ export const Input = ({value, setSearch}: InputTS ) => {
   
   const handelChange = (e: string) => {
     setInput(e)
-    
+    debouncedChange(e)
   } 
 
   return (
@@ -28,7 +28,7 @@ export const Input = ({value, setSearch}: InputTS ) => {
       <select onChange={(e) => setSearch(e.target.value)}>
         <option value="Filter by Region" disabled selected>Filter by Region</option>
         <option value="Africa">Africa</option>
-        <option value="Americas">Americas</option>
+        <option value="Americas">America</option>
         <option value="Asia">Africa</option>
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>

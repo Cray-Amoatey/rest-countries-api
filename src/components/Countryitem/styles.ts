@@ -33,4 +33,12 @@ border-radius: 4px;
       margin: 10px 0px;
     }
   }
+
+  @media(max-width: 768px){
+    .img--area{
+      img{
+        height:180px
+      }
+    }
+  }
 `;

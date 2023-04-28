@@ -10,4 +10,5 @@ export default function useDebounce(search: Function, delay: number){
         },delay)
     }
 
+    return debounced
 }
