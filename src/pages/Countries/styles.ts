@@ -10,6 +10,8 @@ export const CountriesArea = styled.main`
     margin: auto;
   }
 
+ 
+
   @media (max-width: 1024px) {
     .countries {
       width: auto;

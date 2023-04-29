@@ -6,7 +6,7 @@ box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
 
 .container {
     display: flex;
-    width: 1024px;
+    width: 1200px;
     margin: auto;
     justify-content: space-between;
     align-itmes: center;

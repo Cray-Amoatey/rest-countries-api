@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InputArea = styled.section`
 display: flex;
-width: 1024px;
+width: 1200px;
 margin: auto;
 justify-content: space-between;
 padding: 40px 0px;

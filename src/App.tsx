@@ -8,7 +8,7 @@ function App() {
     <Header/>
     <MainRoutes/>
     </>
-  )
+  );
 }
 
 export default App;
