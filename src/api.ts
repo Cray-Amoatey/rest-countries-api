@@ -10,7 +10,7 @@ export const api =  {
         return response.data
     },
     getCountry: async (name: string) => {
-        const response = await http.get(`/name${name}?fullText-true`)
+        const response = await http.get(`/name${name}?fullText=true`)
         return response.data
     },
     getCountryByCode: async (code: string) => {
@@ -18,6 +18,12 @@ export const api =  {
         return response.data
     }
 }
+
+
+
+
+
+
 
 // export let api;
 // async function getCountries (){

@@ -66,4 +66,69 @@ export const CountryData = styled.div`
 
     }
   }
+
+  @media(min-width:768px) and (max-widht: 1023px){
+    &{
+      img {
+        width: 340px;
+        height: 200px;
+      }
+
+      .data-area {
+        h1 {
+          font-size: 14px
+        }
+        .data--firstArea {
+          p, span {
+            font-size: 14px
+          }
+        }
+        .border--area {
+          p, span, a{
+            font-size: 14px
+          }
+        }
+      }
+    }
+  }
+
+  @media(max-width: 767px) {
+    &{
+      grid-template-columns: 1fr;
+
+      img {
+        width: 280px;
+        height:180px;
+        margin: auto
+      }
+
+      .data--area {
+        width: 280px;
+        margin: auto;
+        margin-top: 30px;
+
+        h1{
+          font-size:
+        }
+
+        .data--firstArea {
+          grid-template-columns: 1fr;
+          p, span {
+            font-size: 12px
+          }
+          .topLevel{
+            margin-top: 40px;
+          }
+        }
+        .border--area{
+          .border{
+            grid-template-column: (repeat 3, 1fr);
+            p, span, a {
+              font-size: 14px
+            }
+          }
+        }
+      }
+    }
+  }
 `
