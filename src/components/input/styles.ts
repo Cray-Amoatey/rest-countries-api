@@ -1,11 +1,12 @@
 import styled from "styled-components"; 
 
-export const InputArea = styled.section`
+export const InputArea = styled.section<{theme:string}>`
 display: flex;
 width: 1200px;
 margin: auto;
 justify-content: space-between;
 padding: 40px 0px;
+transition: all ease 0.2;
 
 input{
     height: 50px;
@@ -16,6 +17,10 @@ input{
     box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
     outline:0;
     font-size:14px;
+
+    ::placeholder{
+        color: #ccc
+    }
 }
 
 select {

@@ -4,8 +4,10 @@ import { Input } from "../../components/input";
 import { CountriesTs } from "../../types/Countries";
 import {CountryItem} from '../../components/Countryitem'
 import { api } from "../../api";
+import {useForm} from '../../contexts/ThemeContext'
 
 export const Countries = () => {
+  const {state} = useForm()
   const [countries, setCountries] = useState<CountriesTs[]>([]);
   const [search, setSearch] = useState('')
   const [loading, setloading] = useState(false);
@@ -31,7 +33,7 @@ const lowerSearch = search.toLowerCase()
   )
 
   return (
-    <C.CountriesArea>
+    <C.CountriesArea theme={state.theme}>
       <Input
       value={search}
       setSearch={setSearch}
