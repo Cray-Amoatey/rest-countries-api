@@ -1,5 +1,3 @@
-import { ThemeProvider } from "styled-components";
-
 import {createContext, useContext, useReducer }from "react";
 
 interface State {theme: 'dark'

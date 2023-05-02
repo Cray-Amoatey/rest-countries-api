@@ -1,22 +1,19 @@
 export interface CountryTS {
-  name: string;
-  nativeName: string;
-  population: number;
-  region: string;
-  subregion: string;
-  capital: string;
+  name: string,
+  nativeName: string,
+  population: number,
+  region: string,
+  subregion: string,
+  capital: string,
+  languages: string,
+
   flags: {
-    png: string;
+    png: string,
   };
   topLevelDomain: [string
 
 ];
 currencies:[
-    {
-        name:string
-    }
-],
-languages:[
     {
         name:string
     }

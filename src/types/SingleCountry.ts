@@ -9,6 +9,9 @@ export interface SingleCountryTS {
     currencie:[{
         name: string
     }],
+    languages:[{
+        name: string
+    }]
     flag: string, 
     borders:[
         string
