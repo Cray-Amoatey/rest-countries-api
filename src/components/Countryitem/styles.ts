@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const CountryItem = styled.div`
-background-color: #FFF;
+export const CountryItem = styled.div<{theme: string}>`
+background-color: ${props => props.theme === 'light' ? '#FFF' : 'rgb(43, 55, 67)'} ;
 box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
 border-radius: 4px;
 
   a {
-    text-decoration: none;
-    color: #000;
+    text-decoration: none; 
+    color: #000;   
   }
 
   .img--area {
@@ -19,6 +19,7 @@ border-radius: 4px;
     }
   }
   .data--area {
+    color:${props => props.theme === 'light' ? '0000' : '#FFF'} ;
     padding: 10px 20px;
     p {
       font-size: 13px;

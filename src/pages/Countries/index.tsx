@@ -40,7 +40,7 @@ const lowerSearch = search.toLowerCase()
        />
       <div className="countries">
         {loading && 
-          <div className=""> Loading...</div>
+          <div className="loading"> Loading...</div>
         }
         {!loading &&
          countries.map((item) => (

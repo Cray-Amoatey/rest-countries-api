@@ -1,6 +1,7 @@
 import * as C from './styles'
 import { SingleCountryTS } from '../../types/SingleCountry'
 import { Link } from 'react-router-dom'
+import {useForm} from '../../contexts/ThemeContext'
 
 export const SingleCountry = ({
     name,
@@ -15,8 +16,9 @@ export const SingleCountry = ({
     borders,
     flag
 }: SingleCountryTS) => {
+  const {state} = useForm()
     return (
-      <C.CountryData>
+      <C.CountryData theme = {state.theme}>
         <img src={flag} alt={`Bandeira do pais: ${name}`} />
         <div className="data--area">
           <h1>{name}</h1>

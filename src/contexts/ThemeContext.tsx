@@ -12,7 +12,7 @@ interface Provider{
     children:JSX.Element
 }
 
-const initialData = { theme: 'dark'
+const initialData = { theme: 'light'
 }
 
 

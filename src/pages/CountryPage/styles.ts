@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const CountryPage = styled.main`
+export const CountryPage = styled.main<{theme: string}>`
   height: calc(100vh - 90px);
-
+  background-color: ${props => props.theme === 'light' ? '#FFF' : 'rgb(32,45, 54)'};
+  transition: all ease 0.2s;
   .container {
     width: 1024px;
     margin: auto;
@@ -11,11 +12,12 @@ export const CountryPage = styled.main`
 
   .loading {
     min-height: 100vh;
+    color: ${props => props.theme === 'light' ? '#000' : '#FFF'};
   }
 
   .back--button {
     text-decoration:none;
-    color:#000;
+    color:${props => props.theme === 'light' ? '#000' : '#FFF'};
     margin-botton: 30px;
     display:flex;
     justify-content: center

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CountriesArea = styled.main<{theme: string}>`
 background-color:${props => props.theme === 'light' ? '' : 'rgb(32,45,67)'} ;
 transition: all ease 0.2s;
+
   .countries {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -10,6 +11,14 @@ transition: all ease 0.2s;
     width: 100%;
     max-width: 1200px; 
     margin: auto;
+
+    .loading {
+      min-height: 100vh; 
+    }
+  }
+
+  .loading {
+    color: ${props => props.theme === 'light' ? '' : '#FFF'} ;
   }
 
  

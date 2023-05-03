@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const CountryData = styled.div`
+export const CountryData = styled.div<{theme: string}>`
   display: grid;
   grid-tempelate-colums: repeat(2, 1fr);
-
+  color: ${props => props.theme === 'light' ? '' : '#FFF'} ;
   img {
     width: 440px;
     height: 300px;
@@ -51,7 +51,7 @@ export const CountryData = styled.div`
 
       a{
         text-decoration: none;
-        color:#000;
+        color: ${props => props.theme === 'light' ? '#000' : '#FFF'} ;
         display:flex;
         min-height:29px;
         justify-content: center;
