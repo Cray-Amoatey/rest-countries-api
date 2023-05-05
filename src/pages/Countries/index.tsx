@@ -39,7 +39,7 @@ export const Countries = () => {
 
   return (
     <C.CountriesArea theme={state.theme}>
-      <Input value={search} search={setSearch} />
+      <Input value={search}  search={setSearch} />
       <div className="countries">
         {loading && <div className="loading">Loading...</div>}
         {!loading &&

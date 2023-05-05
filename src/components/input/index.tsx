@@ -19,6 +19,10 @@ export const Input = ({value, setSearch}: InputTS ) => {
     debouncedChange(e) 
   } 
 
+  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(e.target.value)
+  };
+
   return (
     <C.InputArea theme ={state.theme}>
       <input
@@ -27,7 +31,7 @@ export const Input = ({value, setSearch}: InputTS ) => {
         value={value}
         onChange={(e) => handelChange(e.target.value)}
       />
-      <select onChange={(e) => setSearch(e.target.value)}>
+      <select onChange={(e) => handleSelect(e)}>
         <option value="Filter by Region" disabled selected>Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>
