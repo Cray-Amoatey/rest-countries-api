@@ -15,7 +15,7 @@ export const CountryPage = () => {
 
   useEffect(() => {
     if (name) {
-      getCountry(name);
+      getCountry(name); 
     } else if (code) {
       getCountry(code);
     }

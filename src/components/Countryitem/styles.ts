@@ -29,9 +29,10 @@ border-radius: 4px;
         font-weight: 300;
       }
     }
-    .country-name {
+    .country--name {
       font-size: 17px;
       margin: 10px 0px;
+      font-weight: 800;
     }
   }
 
