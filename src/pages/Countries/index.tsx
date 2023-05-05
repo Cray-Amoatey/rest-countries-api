@@ -1,9 +1,9 @@
 import * as C from "./styles";
 import { useEffect, useState } from "react";
-import {CountriesTS} from '../../types/Countries'
-import { Input } from "../../components/input";
+import { CountriesTS } from "../../types/Countries";
+import { Input } from "../../components/Input";
 import { api } from "../../api";
-import { CountryItem } from "../../components/Countryitem";
+import { CountryItem } from "../../components/CountryItem";
 import Pagination from "./Pagination";
 import { useForm } from "../../contexts/ThemeContext";
 
@@ -22,7 +22,7 @@ export const Countries = () => {
 
   const getAllCountries = async () => {
     setLoading(true);
-    const countries = await api.getCountries();
+    let countries = await api.getCountries();
     setCountries(countries);
     setLoading(false);
   };
@@ -39,8 +39,7 @@ export const Countries = () => {
 
   return (
     <C.CountriesArea theme={state.theme}>
-      <Input value={search} 
-      search={setSearch} />
+      <Input value={search} search={setSearch} />
       <div className="countries">
         {loading && <div className="loading">Loading...</div>}
         {!loading &&

@@ -4,18 +4,26 @@ export const CountryData = styled.div<{theme: string}>`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   color: ${props => props.theme === 'light' ? '' : '#FFF'} ;
+  transition: all ease 0.2s;
+  gap:70px;
+  
+
+
   img {
-    width: 440px;
-    height: 300px;
+    width: 560px;
+    height: 401px;
   }
 
   .data--area {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap
+  
 
     h1 {
       margin: 0px;
+
     }
 
     .data--firstArea {
@@ -38,15 +46,22 @@ export const CountryData = styled.div<{theme: string}>`
     
     .border--area{
       margin-top: 20px;
+      display: flex;
+      justify-content:space-even;
+      
       p{
         font-weight: bold;
+        width:156px;
+        
+      
       }
-
-      .bordes {
+      
+      .borders {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 5px;
-        width:100%;
+        width:308px;
+        background
       }
 
       a{
@@ -60,6 +75,9 @@ export const CountryData = styled.div<{theme: string}>`
         font-size:13px;
         font-weight:300px;
         box-shadow: 1px 1px 1em rgba(0, 0, 0, 0.2);
+        width:96px;
+        flex-direction: row
+
       }
     }
   }
