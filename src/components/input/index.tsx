@@ -4,12 +4,13 @@ import { useForm} from "../../contexts/ThemeContext.tsx";
 import {useState} from 'react'
 import useDebounce from "./useDebounce";
 
-const delay = 500
+const delay = 100
 
-export const Input = ({value, setSearch}: InputTS ) => {
+export const Input = ({value, setSearch,setRegion}: InputTS ) => {
   const {state} = useForm()
 
   const [input,  setInput] = useState('')
+
 
   const debouncedChange = useDebounce(setSearch, delay)
  
@@ -31,7 +32,7 @@ export const Input = ({value, setSearch}: InputTS ) => {
         value={value}
         onChange={(e) => handelChange(e.target.value)}
       />
-      <select onChange={(e) => handleSelect(e)}>
+      <select onChange={(e) => setRegion(e.target.value)}>
         <option value="Filter by Region" disabled selected>Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>

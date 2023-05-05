@@ -15,6 +15,8 @@ export const Countries = () => {
   const [countries, setCountries] = useState<CountriesTS[]>([]);
   const [search, setSearch] = useState("");
   const [offset, setOffset] = useState(0);
+  const [region, setRegion] = useState("");
+
 
   useEffect(() => {
     getAllCountries();
@@ -31,15 +33,15 @@ export const Countries = () => {
 
   const filteredCountries = countries.filter(
     (country) =>
-      country.name.toLowerCase().includes(lowerSearch) ||
-      country.region.toLowerCase().includes(lowerSearch)
+      country.name.toLowerCase().includes(lowerSearch) &&
+      (region === "" || country.region.toLowerCase() === region.toLowerCase())
   );
 
   const pagCountries = filteredCountries.slice(offset, offset + 12);
 
   return (
     <C.CountriesArea theme={state.theme}>
-      <Input value={search}  search={setSearch} />
+      <Input value={search}  setSearch ={setSearch} setRegion={setRegion}/>
       <div className="countries">
         {loading && <div className="loading">Loading...</div>}
         {!loading &&
