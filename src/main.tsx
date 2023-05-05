@@ -1,18 +1,20 @@
-import React from 'react'
-import { BrowserRouter as Routes} from 'react-router-dom';
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import './index.css'  
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <Routes>
-        <App />
-      </Routes>
-    </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
- 
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  const root = createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <ThemeProvider>
+        <Router>
+          <App />
+        </Router>
+      </ThemeProvider>
+    </React.StrictMode>
+  );
+}

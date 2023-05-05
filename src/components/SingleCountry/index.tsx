@@ -15,7 +15,9 @@ export const SingleCountry = ({
     languages,
     borders,
     flag
-}: SingleCountryTS) => {
+}: 
+
+SingleCountryTS) => {
   const {state} = useForm()
     return (
       <C.CountryData theme = {state.theme}>

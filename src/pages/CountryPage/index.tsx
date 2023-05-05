@@ -1,36 +1,34 @@
 import * as C from "./styles";
-import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import {CountryTS} from '../../types/Country'
+import { Link, useParams } from "react-router-dom";
 import { SingleCountry } from "../../components/SingleCountry";
+import { useEffect, useState } from "react";
+import { CountryTS } from "../../types/Country";
 import { api } from "../../api";
-import {useForm} from '../../contexts/ThemeContext'
-
+import { useForm } from "../../contexts/ThemeContext";
 
 export const CountryPage = () => {
-  const {state} = useForm()
+  const { state } = useForm();
   const { name, code } = useParams();
 
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState<CountryTS[]>([]);
 
   useEffect(() => {
     if (name) {
-      getCountry(name)
-    } else if (code) {   
-      getCountry(code)
+      getCountry(name);
+    } else if (code) {
+      getCountry(code);
     }
-  }, [name, code])
+  }, [name, code]);
 
   const getCountry = async (param: string) => {
-    setloading(true);
+    setLoading(true);
     const country = name
       ? await api.getCountry(param)
       : await api.getCountryByCode(param);
-    setCountry(country)
-    console.log(country)
-    setloading(false)
-  }
+    setCountry(country);
+    setLoading(false);
+  };
 
   return (
     <C.CountryPage theme={state.theme}>
@@ -38,20 +36,20 @@ export const CountryPage = () => {
         <Link to="/" className="back--button">
           Back
         </Link>
-        {loading && <div className="loading">Loading...</div>}
+        {loading && <div className="loading">Loading..</div>}
         {!loading &&
           country.map((item) => (
             <SingleCountry
               flag={item.flags.png}
               name={item.name}
               nativeName={item.nativeName}
-              population={item.capital}
+              population={item.population}
               region={item.region}
               subregion={item.subregion}
               capital={item.capital}
               topLevelDomain={item.topLevelDomain[0]}
               currencie={item.currencies && item.currencies}
-              Languages={item.languages}
+              languages={item.languages}
               borders={item.borders}
             />
           ))}

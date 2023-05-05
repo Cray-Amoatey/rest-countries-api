@@ -1,15 +1,15 @@
+import { InputTS } from "../../types/input.ts";
 import * as C from "./styles.ts";
-import {InputTS} from '../../types/Input'
+import { useForm} from "../../contexts/ThemeContext.tsx";
 import {useState} from 'react'
 import useDebounce from "./useDebounce";
-import { useForm} from "../../contexts/ThemeContext.tsx";
 
 const delay = 500
 
 export const Input = ({value, setSearch}: InputTS ) => {
   const {state} = useForm()
 
-  const [input, setInput] = useState('')
+  const [input,  setInput] = useState('')
 
   const debouncedChange = useDebounce(setSearch, delay)
  
