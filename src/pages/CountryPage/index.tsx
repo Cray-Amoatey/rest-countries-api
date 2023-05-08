@@ -11,11 +11,11 @@ export const CountryPage = () => {
   const { name, code } = useParams();
 
   const [loading, setLoading] = useState(false);
-  const [country, setCountry] = useState<CountryTS[]>([]);
+  const [country, setCountry] = useState<CountryTS[] | null>(null);
 
   useEffect(() => {
     if (name) {
-      getCountry(name);
+      getCountry(name); 
     } else if (code) {
       getCountry(code);
     }
@@ -23,10 +23,10 @@ export const CountryPage = () => {
 
   const getCountry = async (param: string) => {
     setLoading(true);
-    let country = name
+    const country = name
       ? await api.getCountry(param)
       : await api.getCountryByCode(param);
-    setCountry(country);
+    setCountry([...country]);
     setLoading(false);
   };
 
@@ -36,9 +36,8 @@ export const CountryPage = () => {
         <Link to="/" className="back--button">
           Back
         </Link>
-        {loading && <div className="loading">Carregando..</div>}
-        {!loading &&
-          country.map((item) => (
+        {loading && <div className="loading">Loading..</div>}
+        {!loading && country !== null && country.map((item) => (
             <SingleCountry
               flag={item.flags.png}
               name={item.name}
@@ -49,7 +48,9 @@ export const CountryPage = () => {
               capital={item.capital}
               topLevelDomain={item.topLevelDomain[0]}
               currencie={item.currencies && item.currencies}
-              languages={item.languages}
+              languages={
+                item.languages && item.languages.map((lang: { name: any; }) => ({ name: lang.name }))
+              }
               borders={item.borders}
             />
           ))}

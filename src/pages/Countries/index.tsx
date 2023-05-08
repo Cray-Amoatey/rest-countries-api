@@ -47,7 +47,7 @@ export const Countries = () => {
         {!loading &&
           pagCountries.map((item) => (
             <CountryItem
-              key={item.numericCode}
+              key={item.numericCode?.toString()}
               name={item.name}
               population={item.population}
               region={item.region}
