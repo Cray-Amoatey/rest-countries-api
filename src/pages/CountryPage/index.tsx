@@ -6,6 +6,8 @@ import { CountryTS } from "../../types/Country";
 import { api } from "../../api";
 import { useForm } from "../../contexts/ThemeContext";
 
+
+
 export const CountryPage = () => {
   const { state } = useForm();
   const { name, code } = useParams();
@@ -48,9 +50,7 @@ export const CountryPage = () => {
               capital={item.capital}
               topLevelDomain={item.topLevelDomain[0]}
               currencie={item.currencies && item.currencies}
-              languages={
-                item.languages && item.languages.map((lang: { name: any; }) => ({ name: lang.name }))
-              }
+              languages ={item.languages}
               borders={item.borders}
             />
           ))}

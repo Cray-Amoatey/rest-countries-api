@@ -5,7 +5,7 @@ export interface CountryTS {
   region: string,
   subregion: string,
   capital: string,
-  languages: string,
+  language: string,
 
   flags: {
     png: string,
@@ -20,5 +20,8 @@ currencies:[
 ],
 borders:[
     string
+],
+languages: [
+  {name: string}
 ]
 }

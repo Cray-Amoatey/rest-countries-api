@@ -4,4 +4,5 @@ export interface CountryItemTS {
     population: number,
     region: string,
     flag: string
+    languages: string
 }

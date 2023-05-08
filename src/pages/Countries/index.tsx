@@ -53,6 +53,7 @@ export const Countries = () => {
               region={item.region}
               capital={item.capital}
               flag={item.flags.png}
+              languages={item.name}
             />
           ))}
       </div>
