@@ -15,7 +15,7 @@ export const CountryPage = () => {
 
   useEffect(() => {
     if (name) {
-      getCountry(name); 
+      getCountry(name);
     } else if (code) {
       getCountry(code);
     }
@@ -23,7 +23,7 @@ export const CountryPage = () => {
 
   const getCountry = async (param: string) => {
     setLoading(true);
-    const country = name
+    let country = name
       ? await api.getCountry(param)
       : await api.getCountryByCode(param);
     setCountry(country);
@@ -36,7 +36,7 @@ export const CountryPage = () => {
         <Link to="/" className="back--button">
           Back
         </Link>
-        {loading && <div className="loading">Loading..</div>}
+        {loading && <div className="loading">Carregando..</div>}
         {!loading &&
           country.map((item) => (
             <SingleCountry

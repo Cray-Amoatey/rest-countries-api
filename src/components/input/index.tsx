@@ -2,7 +2,7 @@ import { InputTS } from "../../types/input.ts";
 import * as C from "./styles.ts";
 import { useForm} from "../../contexts/ThemeContext.tsx";
 import {useState} from 'react'
-import useDebounce from "./useDebounce";
+import useDebounce from "./useDebounce.ts";
 
 const delay = 100
 
@@ -36,7 +36,7 @@ export const Input = ({value, setSearch,setRegion}: InputTS ) => {
         <option value="Filter by Region" disabled selected>Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>
-        <option value="Asia">Africa</option>
+        <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
       </select>

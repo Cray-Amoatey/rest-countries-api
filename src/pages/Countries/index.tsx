@@ -1,6 +1,6 @@
 import * as C from "./styles";
 import { useEffect, useState } from "react";
-import { CountriesTS } from "../../types/Countries";
+import { CountryTS } from "../../types/Countries";
 import { Input } from "../../components/Input";
 import { api } from "../../api";
 import { CountryItem } from "../../components/CountryItem";
@@ -12,7 +12,7 @@ const LIMIT = 12;
 export const Countries = () => {
   const { state } = useForm();
   const [loading, setLoading] = useState(false);
-  const [countries, setCountries] = useState<CountriesTS[]>([]);
+  const [countries, setCountries] = useState<CountryTS[]>([]);
   const [search, setSearch] = useState("");
   const [offset, setOffset] = useState(0);
   const [region, setRegion] = useState("");
@@ -24,7 +24,7 @@ export const Countries = () => {
 
   const getAllCountries = async () => {
     setLoading(true);
-    let countries = await api.getCountries();
+    const countries = await api.getCountries();
     setCountries(countries);
     setLoading(false);
   };

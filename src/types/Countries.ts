@@ -1,4 +1,5 @@
 export interface CountryTS {
+  numericCode: Key | null | undefined;
   name: string;
   nativeName: string;
   population: number;

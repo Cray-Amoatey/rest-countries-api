@@ -1,7 +1,7 @@
-import * as C from './styles'
-import {CountryItemTS} from '../../types/Countryitem'
+import * as C from './styles.ts'
+import {CountryItemTS} from '../../types/Countryitem.ts'
 import {Link} from 'react-router-dom'
-import {useForm} from '../../contexts/ThemeContext'
+import {useForm} from '../../contexts/ThemeContext.tsx'
 
 
 export const CountryItem = ({name, population, region, capital, flag}: CountryItemTS) => {
