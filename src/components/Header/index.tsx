@@ -5,11 +5,12 @@ export const Header = () => {
   const { state, dispatch } = useForm();
 
   const handleChangeTheme = () => {
-    const newTheme = state.theme === "light" ? "dark" : "light";
-    dispatch({
-      type: themeActions.setTheme,
-      payload: newTheme,
-    } as { type: themeActions.setTheme; payload: "dark" | "light" });
+    const newTheme = state.theme === "dark" ? "light" : "dark";
+   dispatch({
+     type: themeActions.setTheme,
+     payload: newTheme as "dark" | "light",
+   });
+
   };
 
   return (
@@ -17,7 +18,7 @@ export const Header = () => {
       <div className="container">
         <h1>Where in the World?</h1>
         <p onClick={handleChangeTheme}>
-          {state.theme === "light" ? "Dark Mode" : "Light Mode"}
+          {state.theme === "dark" ? "Dark Mode" : "Light Mode"}
         </p>
       </div>
     </C.Header>
