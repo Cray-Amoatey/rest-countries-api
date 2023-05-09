@@ -6,11 +6,10 @@ export const Header = () => {
 
   const handleChangeTheme = () => {
     const newTheme = state.theme === "dark" ? "light" : "dark";
-   dispatch({
-     type: themeActions.setTheme,
-     payload: newTheme as "dark" | "light",
-   });
-
+    dispatch({
+      type: themeActions.setTheme,
+      payload: newTheme as "dark" | "light",
+    });
   };
 
   return (
