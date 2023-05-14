@@ -10,7 +10,7 @@ export const CountryItem = ({name, population, region, capital, flag}: CountryIt
         <C.CountryItem theme = {state.theme}>
             <Link to= {`country/${name}`}>
                <div className='img--area'>
-                <img src ={flag} alt ={`Bandeira do Pais:$ ${name}`}/>
+                <img src ={flag} alt ={`country flag:$ ${name}`}/>
                </div>
                <div className = 'data--area'>
                 <p className= 'country--name'>{name}</p>
