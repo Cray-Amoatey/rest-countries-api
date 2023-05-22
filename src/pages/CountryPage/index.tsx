@@ -6,18 +6,16 @@ import { CountryTS } from "../../types/Country";
 import { api } from "../../api";
 import { useForm } from "../../contexts/ThemeContext";
 
-
-
 export const CountryPage = () => {
   const { state } = useForm();
   const { name, code } = useParams();
 
   const [loading, setLoading] = useState(false);
-  const [country, setCountry] = useState<CountryTS[] | null>(null);
+  const [country, setCountry] = useState<CountryTS[]>([]);
 
   useEffect(() => {
     if (name) {
-      getCountry(name); 
+      getCountry(name);
     } else if (code) {
       getCountry(code);
     }
@@ -25,32 +23,39 @@ export const CountryPage = () => {
 
   const getCountry = async (param: string) => {
     setLoading(true);
-    const country = name
-      ? await api.getCountry(param)
-      : await api.getCountryByCode(param);
-    setCountry([...country]);
-    setLoading(false);
+    try {
+      let response = await api.getCountries();
+      let country = response.find((item: CountryTS) => item.name === param);
+      setCountry(country ? [country] : []);
+    } catch (error) {
+      console.error("Error fetching country:", error);
+      setCountry([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <C.CountryPage theme={state.theme}>
       <div className="container">
         <Link to="/" className="back--button">
-          Back
+          <i className="fas fa-long-arrow-alt-left"></i> Back
         </Link>
-        {loading && <div className="loading">Loading..</div>}
-        {!loading && country !== null && country.map((item) => (
+        {loading && <div className="loading">Loading...</div>}
+        {!loading &&
+          country.map((item) => (
             <SingleCountry
+              key={item.name}
               flag={item.flags.png}
               name={item.name}
               nativeName={item.nativeName}
+              topLevelDomain={item.topLevelDomain[0]}
               population={item.population}
+              currencies={item.currencies && item.currencies}
               region={item.region}
+              languages={item.languages}
               subregion={item.subregion}
               capital={item.capital}
-              topLevelDomain={item.topLevelDomain[0]}
-              currencie={item.currencies && item.currencies}
-              languages ={item.languages}
               borders={item.borders}
             />
           ))}

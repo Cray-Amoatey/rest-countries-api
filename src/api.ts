@@ -9,15 +9,29 @@ export const api = {
     const response = await http.get("/all");
     return response.data;
   },
-  getCountry: async (name: string) => {
-    const response = await http.get(`/name/${name}?fullText=true`);
-    return response.data;
-  },
-  getCountryByCode: async (code: string) => {
-        const response = await http.get(`/alpha?codes=${code}`);
-    return response.data;
-  },
+  // getCountry: async (name: string) => {
+  //   const response = await http.get(`/name/${name}?fullText=true`);
+  //   return response.data;
+  // },
+  // getCountryByCode: async (code: string) => {
+  //       const response = await http.get(`/alpha?codes=${code}`);
+  //   return response.data;
+  // },
 };
+
+
+
+// export const api = {
+//   getAllData: async () => {
+//     const response = await http.get("/all");
+//     return response;
+//   },
+// };
+// const data = await api.getAllData();
+// console.log(data.data);
+
+
+
 
 // export let api;
 // async function getCountries (){

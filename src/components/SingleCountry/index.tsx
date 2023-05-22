@@ -1,5 +1,6 @@
 import * as C from "./styles";
 import { SingleCountryTS } from "../../types/SingleCountry";
+import countryCodes from "../../utilities/countryCodes";
 import { Link } from "react-router-dom";
 import { useForm } from "../../contexts/ThemeContext";
 
@@ -11,7 +12,7 @@ export const SingleCountry = ({
   subregion,
   capital,
   topLevelDomain,
-  currencie,
+  currencies,
   languages,
   borders,
   flag,
@@ -19,63 +20,66 @@ export const SingleCountry = ({
   const { state } = useForm();
   return (
     <C.CountryData theme={state.theme}>
-      <img src={flag} alt={`Bandeira do pais: ${name}`} />
+      <img src={flag} alt={`Country: ${name}`} />
       <div className="data--area">
         <h1>{name}</h1>
         <div className="data--firstArea">
           <p>
-            <span>Native Name:</span>
+            <span>Native Name: </span>
             {nativeName}
           </p>
-          <p>
-            <span>Population:</span>
-            {population}
+          <p className="topLevel">
+            <span>Top Level Domain: </span>
+            {topLevelDomain}
           </p>
           <p>
-            <span>Region:</span>
+            <span>Population: </span> {population.toLocaleString()}
+          </p>
+          {currencies && (
+            <p>
+              <span>Currencies: </span>
+              {currencies.map((item) => item.name)}
+            </p>
+          )}
+          <p>
+            <span>Region: </span>
             {region}
           </p>
           <p>
-            <span>Subregion:</span>
-            {subregion}
-          </p>
-          {capital && (
-            <p>
-              <span>Capital:</span>
-              {capital}
-            </p>
-          )}
-          <p className="topLevel">
-            <span>Top Level Domain</span>
-            {topLevelDomain}
-          </p>
-          {currencie && (
-            <p>
-              <span>Currencies:</span>
-              {currencie.map((item) => item.name)}
-            </p>
-          )}
-          <p>
-            <span>Languages:</span>
+            <span>Languages: </span>
             {languages.map((item, index) => (
-              <span key={index} className="language">
+              <span className="language" key={index}>
                 {item.name}
               </span>
             ))}
           </p>
+          <p>
+            <span>Sub Region: </span>
+            {subregion}
+          </p>
+          {capital && (
+            <p>
+              <span>Capital: </span>
+              {capital}
+            </p>
+          )}
         </div>
-        {borders && (
-          <div className="border--area">
-            <p>Border Countries:</p>
-            <div className="borders">
-              {borders.map((item, index) => (
-                <Link to={`/code/${item}`} key={index}>
-                  {item}
-                </Link>
-              ))}
-            </div>
+        <div className="border--area">
+          <p>Border Countries:</p>
+          <div className="borders">
+            {borders
+              ? borders.map((border: string, index: number) => (
+                  <Link
+                    to={`/country/${countryCodes[border]}`}
+                    className="border"
+                    key={index}
+                  >
+                    {countryCodes[border]}
+                  </Link>
+                ))
+              : "No, border!"}
           </div>
-        )}
+        </div>
       </div>
     </C.CountryData>
   );

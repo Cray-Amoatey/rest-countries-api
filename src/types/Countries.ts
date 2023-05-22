@@ -22,3 +22,8 @@ export interface CountryTS {
   ];
   borders: [string];
 }
+
+
+export interface CountryList {
+  countries: [string]
+}

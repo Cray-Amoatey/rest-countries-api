@@ -6,7 +6,7 @@ export interface SingleCountryTS {
     subregion: string,
     capital: string,
     topLevelDomain: string,
-    currencie:[{
+    currencies:[{
         name: string
     }],
     languages:[{

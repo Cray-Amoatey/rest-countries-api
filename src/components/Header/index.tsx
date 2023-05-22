@@ -17,6 +17,7 @@ export const Header = () => {
       <div className="container">
         <h1>Where in the World?</h1>
         <p onClick={handleChangeTheme}>
+          <span className="moonOutline"><img src="src/components/Header/image/path.png" alt="" /></span>
           {state.theme === "dark" ? "Dark Mode" : "Light Mode"}
         </p>
       </div>
