@@ -30,8 +30,9 @@ export const InputArea = styled.section<{ theme: string }>`
 
   select {
     border-raduis: 2px;
-        padding: 0px 20px;
+    padding:10px;
     border: none;
+    border-right:13px solid #fff;
     box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
     outline: 0;
     font-size: 14px;
@@ -41,30 +42,38 @@ export const InputArea = styled.section<{ theme: string }>`
 
     // opacity: 0.4;
     cursor: pointer;
-    appearance: none;
+    // appearance: none;
+  
+    
   }
 
-  #selectIcon {
-    color: bolder;
-    font-size: 15px;
-    font-weight: 800;
-    position: absolute;
-    right: 83px;
-    top: 130px;
-    rotate: 90deg;
-    cursor:pointer;
-  }
 
-  .dropdownarrow: {
-    margin-left: 10px;
-  }
+ 
 
+ 
+
+  
   @media (max-width: 1024px) {
     & {
       width: auto;
       padding: 20px;
-    }
+
+
+      select {
+    border-raduis: 2px;
+        padding: 0px 20px;
+    border: none;
+    box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
+    outline: 0;
+    font-size: 14px;
+    background-color: ${(props) =>
+      props.theme === "light" ? "" : "rgb(43, 55, 67)"};
+    color: ${(props) => (props.theme === "light" ? "#000" : "#FFF")};
+        border-right:13px solid #fff;
   }
+    }
+
+   
 
   @media (max-width: 768px) {
     & {
