@@ -253,7 +253,7 @@ color: white;
 
 .grid .linkText{
     text-decoration: none;
-    cursor: pointer;
+     cursor: pointer;
 }
 
 .mainContainer {
@@ -264,6 +264,13 @@ color: white;
     height: 100vh;
     background-color: var(--main-background-color);
 }
+
+.borderbtn{
+    display: grid;
+    grid-template-columns: 1fr 1fr  1fr 1fr;
+}
+
+
 
 /* media queries*/
 @media only  screen and (max-width:370px){
